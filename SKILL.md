@@ -85,27 +85,27 @@ E="$H/.workbuddy/skills/everything-search/scripts/esearch.py"
 
 | 选项 | 作用 |
 |---|---|
-| `-path <path>` | 搜索该路径下的子目录和文件（递归） |
-| `-parent <path>` | 只匹配父目录正好是该路径的项 |
-| `-parent-path <path>` | 搜索 path 的父目录下 |
-| `/a-d` | 只列文件 |
-| `/ad` | 只列目录 |
-| `/a[RHSDAVNTPLCOIEUPM]` | 按属性过滤，前缀 `-` 表示排除 |
-| `-r, -regex <expr>` | 正则 |
-| `-i, -case` | 大小写敏感 |
-| `-w, -ww, -whole-word(s)` | 全字匹配 |
-| `-p, -match-path` | 匹配完整路径 |
-| `-prefix` / `-suffix` | 匹配词首 / 词尾 |
-| `-ignore-punctuation` / `-ignore-whitespace` | 忽略标点 / 空白 |
+| -path <path> | 搜索该路径下的子目录和文件（递归） |
+| -parent <path> | 只匹配父目录正好是该路径的项 |
+| -parent-path <path> | 搜索 path 的父目录下 |
+| /a-d | 只列文件 |
+| /ad | 只列目录 |
+| /a[RHSDAVNTPLCOIEUPM] | 按属性过滤，前缀 `-` 表示排除 |
+| -r, -regex <expr> | 正则 |
+| -i, -case | 大小写敏感 |
+| -w, -ww, -whole-word(s) | 全字匹配 |
+| -p, -match-path | 匹配完整路径 |
+| -prefix / -suffix | 匹配词首 / 词尾 |
+| -ignore-punctuation / -ignore-whitespace | 忽略标点 / 空白 |
 
 数量与统计：
 
 | 选项 | 作用 |
 |---|---|
-| `-n <num>, -count <num>` | 最大结果数 |
-| `-get-result-count` | 只输出命中总数，很快 |
-| `-get-total-size` | 结果总大小 |
-| `-get-folder-size <dir>` | 目录总大小 |
+| -n <num>, -count <num> | 最大结果数 |
+| -get-result-count | 只输出命中总数，很快 |
+| -get-total-size | 结果总大小 |
+| -get-folder-size <dir> | 目录总大小 |
 
 排序：`-sort <name-ascending|name-descending>`，name 可取 `name`、`path`、`size`、
 `extension`、`date-created`、`date-modified`、`date-accessed`、`attributes`、`run-count`、
@@ -132,25 +132,25 @@ E="$H/.workbuddy/skills/everything-search/scripts/esearch.py"
 
 | 语法 | 行为 |
 |---|---|
-| `path:C:\Dir\Sub` | 递归包含该路径，含所有子目录 |
-| `infolder:C:\Dir` | 只匹配**直接子项**，不含子目录 |
-| `parent:C:\Dir` | 与 `infolder:` 行为一致 |
-| `ext:md` / `ext:txt;md` | 单扩展名 / 多扩展名用分号 |
-| `folder:` / `file:` | 只列目录 / 只列文件 |
-| `startwith:x` / `endwith:x` | 文件名以此开头 / 结尾 |
-| `child:x` / `wfn:x*` | 匹配子项名 / 文件名通配 |
-| `type:file` / `runcount:>0` | 按类型 / 运行次数 |
-| `size:>10mb` | 大小 |
-| `dm:today` / `dc:thisweek` | 修改日期 / 创建日期 |
-| `dupe:` | 重复文件 |
-| `empty:` | 空文件夹 |
-| `len:>100` | 文件名长度 |
-| `case:Foo` / `wholeword:foo` | 大小写敏感 / 全字匹配 |
-| `regex:^test_.*\.txt$` | 正则 |
-| `!条件` / `条件1\|条件2` | 取反 / 或 |
-| `path-part:` | **无效果**，实测返回 0 |
-| `attrib:H` | 读属性，**极慢**，实测超时 |
-| `content:` | 内容搜索，需要 Everything 1.5 的内容索引 |
+| path:C:\Dir\Sub | 递归包含该路径，含所有子目录 |
+| infolder:C:\Dir | 只匹配**直接子项**，不含子目录 |
+| parent:C:\Dir | 与 `infolder:` 行为一致 |
+| ext:md / ext:txt;md | 单扩展名 / 多扩展名用分号 |
+| folder: / file: | 只列目录 / 只列文件 |
+| startwith:x / endwith:x | 文件名以此开头 / 结尾 |
+| child:x / wfn:x* | 匹配子项名 / 文件名通配 |
+| type:file / runcount:>0 | 按类型 / 运行次数 |
+| size:>10mb | 大小 |
+| dm:today / dc:thisweek | 修改日期 / 创建日期 |
+| dupe: | 重复文件 |
+| empty: | 空文件夹 |
+| len:>100 | 文件名长度 |
+| case:Foo / wholeword:foo | 大小写敏感 / 全字匹配 |
+| regex:^test_.*\.txt$ | 正则 |
+| !条件 / 条件1\|条件2 | 取反 / 或 |
+| path-part: | **无效果**，实测返回 0 |
+| attrib:H | 读属性，**极慢**，实测超时 |
+| content: | 内容搜索，需要 Everything 1.5 的内容索引 |
 
 多个条件用空格分隔表示 AND。默认只匹配**文件名**，不匹配完整路径，
 限定目录必须用 `--in`。
