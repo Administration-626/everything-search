@@ -1,0 +1,10 @@
+{
+  "_说明": "复制本文件为 config.json，填入本机实际路径。config.json 已列入 .gitignore。",
+  "es_path": "C:\\Users\\<用户名>\\AppData\\Local\\es\\es.exe",
+  "python_path": "C:\\Users\\<用户名>\\.workbuddy\\binaries\\python\\versions\\<版本>\\python.exe",
+  "es_version": "<es -version 的输出>",
+  "everything_version": "<es -get-everything-version 的输出>",
+  "everything_install": "C:\\path\\to\\Everything",
+  "everything_is_portable": true,
+  "default_search_root": "C:\\Users\\<用户名>"
+}
