@@ -22,14 +22,43 @@ Glob 和 Grep 是递归遍历，范围一大就慢，甚至撞上超时上限。
 
 ## 安装
 
-把仓库放到 skill 目录：
+### 为什么必须放在 skill 目录
+
+agent 工具启动时会扫描固定目录，把里面的 `SKILL.md` 加载成可用能力。这个位置由工具
+本身约定，不是随便挑的：
+
+| 工具 | 用户级（全局可用） | 项目级（仅该项目可用） |
+|---|---|---|
+| WorkBuddy | `~/.workbuddy/skills/` | `<工作区>/.workbuddy/skills/` |
+| Claude Code | `~/.claude/skills/` | `<项目>/.claude/skills/` |
+
+本仓库同时兼容两者，放哪个目录取决于你用哪个工具。下面以 WorkBuddy 的用户级目录为例。
+
+### 装法
+
+**目录还不存在时，直接 clone：**
 
 ```bash
-git clone git@github.com:<你的账号>/everything-search.git \
+git clone git@github.com:Administration-626/everything-search.git \
   ~/.workbuddy/skills/everything-search
 ```
 
-配置本机路径：
+**目录已存在时不要用 clone。** `git clone` 到非空目录会直接报错，改用：
+
+```bash
+cd ~/.workbuddy/skills/everything-search
+git init
+git remote add origin git@github.com:Administration-626/everything-search.git
+git fetch origin
+git checkout -b main origin/main
+```
+
+**不用 git 也行**，下载 zip 解压到目标目录同样可用。
+
+> Git Bash 里 `~` 展开成 `/c/Users/xxx`，某些命令拼这个路径会失败。
+> 遇到问题改用 `C:/Users/xxx/...`，详见下面的「用法」一节。
+
+### 配置
 
 ```bash
 cd ~/.workbuddy/skills/everything-search
