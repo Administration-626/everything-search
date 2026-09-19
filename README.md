@@ -3,7 +3,7 @@
 Windows 全盘文件秒搜的 skill，面向 Claude Code / WorkBuddy 一类的 agent 运行环境。
 通过 Everything 官方命令行工具 ES（`es.exe`）经 IPC 查询，毫秒级返回，替代慢速的目录遍历。
 
-## 解决什么问题
+## 与递归遍历的对比
 
 Glob 和 Grep 是递归遍历，范围一大就慢，甚至撞上超时上限。
 
@@ -22,10 +22,9 @@ Glob 和 Grep 是递归遍历，范围一大就慢，甚至撞上超时上限。
 
 ## 安装
 
-### 为什么必须放在 skill 目录
+### 放到哪里
 
-agent 工具启动时会扫描固定目录，把里面的 `SKILL.md` 加载成可用能力。这个位置由工具
-本身约定，不是随便挑的：
+agent 工具启动时会扫描固定目录，把里面的 `SKILL.md` 加载成可用能力。位置由工具约定：
 
 | 工具 | 用户级（全局可用） | 项目级（仅该项目可用） |
 |---|---|---|
@@ -125,7 +124,7 @@ E="$H/.workbuddy/skills/everything-search/scripts/esearch.py"
 `config.json` 和 `local-notes.md` 含本机信息，已列入 `.gitignore`，不进仓库。
 首次使用时从对应的 `.example` 文件复制一份再填。
 
-## 使用的注意事项
+## 注意事项
 
 三条会静默失效的坑，都写在 `SKILL.md` 里：
 
