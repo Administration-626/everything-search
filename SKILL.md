@@ -48,17 +48,17 @@ E="$H/.workbuddy/skills/everything-search/scripts/esearch.py"
 
 | 参数 | 说明 |
 |---|---|
-| `query` | Everything 搜索语法，可省略，只给 `--in` 也行 |
-| `-i, --in DIR` | 限定目录，递归包含子目录，斜杠方向不限 |
-| `-n, --count` | 返回条数上限，默认 100 |
-| `-s, --sort` | `name` / `path` / `size` / `date_modified` / `date_created` / `extension` / `run_count` |
-| `--desc` | 降序 |
-| `--offset N` | 跳过前 N 条 |
-| `--files-only` / `--folders-only` | 只列文件 / 只列目录 |
-| `--count-only` | 只输出命中数量 |
-| `--json` | 输出 JSON |
-| `--config <文件>` | 指定配置文件，默认读 skill 根目录的 `config.json` |
-| `--where` | 打印 es 路径与两个版本号，用于换机器后校准 |
+| query | Everything 搜索语法，可省略，只给 --in 也行 |
+| -i, --in DIR | 限定目录，递归包含子目录，斜杠方向不限 |
+| -n, --count | 返回条数上限，默认 100 |
+| -s, --sort | name / path / size / date_modified / date_created / extension / run_count |
+| --desc | 降序 |
+| --offset N | 跳过前 N 条 |
+| --files-only / --folders-only | 只列文件 / 只列目录 |
+| --count-only | 只输出命中数量 |
+| --json | 输出 JSON |
+| --config <文件> | 指定配置文件，默认读 skill 根目录的 config.json |
+| --where | 打印 es 路径与两个版本号，用于换机器后校准 |
 
 输出列固定为文件名、大小、修改时间（ISO-8601，由 ES 的 `-date-format 1` 产生）。
 
